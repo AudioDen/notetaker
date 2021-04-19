@@ -1,7 +1,7 @@
 // DEPENDECIES
 const express = require("express");
 const app = express();
-const htmlRoutes = require(".routes/htmlRoutes")
+const htmlRoutes = require("./routes/htmlRoutes")
 const PORT =  process.env.PORT || 3000
 
 // data parsing 
