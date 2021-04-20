@@ -1,7 +1,8 @@
 // DEPENDECIES
 const express = require("express");
 const app = express();
-const htmlRoutes = require("./routes/htmlRoutes")
+//const htmlRoutes = require("./routes/htmlRoutes")
+
 const PORT =  process.env.PORT || 3000
 
 // data parsing 
@@ -11,7 +12,7 @@ app.use(express.static("public"));
 
 //ROUTING FOR HTML AND API
 
-//require("./routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 // PORT ASSIGNMENT  LISTNER
