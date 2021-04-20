@@ -18,7 +18,7 @@ module.exports = (app) => {
   
   app.post("/api/notes", function (req, res) {
     const myNote = req.body;
-    myNote.id = myNote.id;
+    myNote.id = uuidv4(myNote.id);
     db.push(myNote);
 
     fs.writeFile("db/db.json", JSON.stringify(db), (err) => {
@@ -33,7 +33,7 @@ module.exports = (app) => {
 
 
   app.delete("/api/notes/:id", function (req, res) {
-    const myNoteId = myNoteId;
+    const myNoteId = req.params.id;
     db = db.filter((notes, index) => {
       return myNoteId !== notes.id;
     });
